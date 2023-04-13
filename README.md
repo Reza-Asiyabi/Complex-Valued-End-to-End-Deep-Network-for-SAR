@@ -15,3 +15,6 @@ The "S1SLC_CVDL: A COMPLEX-VALUED ANNOTATED SINGLE LOOK COMPLEX SENTINEL-1 SAR D
 30,000 patches are randomely selected from the S1SLC_CVDL dataset for the experiments in this study. 66% of the selected patches are used for training the network in each case study and the rest are used for evaluation.
 
 ## Usage
+The network can be trained using the file "Train_Torch.py". The trained network should be saved to be used in the "Predict_Torch.py" file for predicting the outputs.
+The input and the the output channels of the network should be modified for each case study.
+The codes in the RV folder should be used for the equavalent Real_Valued (RV) network.
