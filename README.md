@@ -18,3 +18,6 @@ The "S1SLC_CVDL: A COMPLEX-VALUED ANNOTATED SINGLE LOOK COMPLEX SENTINEL-1 SAR D
 The network can be trained using the file "Train_Torch.py". The trained network should be saved to be used in the "Predict_Torch.py" file for predicting the outputs.
 The input and the the output channels of the network should be modified for each case study.
 The codes in the RV folder should be used for the equavalent Real_Valued (RV) network.
+
+## Acknowledgements
+This project has received funding from the European Union’s Horizon 2020 research and innovation programme under the Marie Skłodowska-Curie grant agreement No 860370.
