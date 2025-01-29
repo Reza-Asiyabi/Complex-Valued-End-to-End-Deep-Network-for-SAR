@@ -9,8 +9,8 @@ from torch.nn import Module, Parameter, init
 from torch.nn import Conv1d, Conv2d, Linear
 from torch.nn import ConvTranspose1d, ConvTranspose2d
 import torch.nn.functional as F
-from Src.complexFunctions_Torch import complex_relu, complex_leaky_relu, complex_sigmoid, complex_MSE_loss, complex_CrossEntropy_loss, complex_avg_pool1d, complex_avg_pool2d, complex_Upsample
-from Src import Coherence
+from CV_Operators import complex_relu, complex_leaky_relu, complex_sigmoid, complex_MSE_loss, complex_CrossEntropy_loss, complex_avg_pool1d, complex_avg_pool2d, complex_Upsample
+import Coherence
 
 def apply_complex(fr, fi, input):
 
