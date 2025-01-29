@@ -6,9 +6,9 @@ Based on "R. M.Asiyabi, M. Datcu, A. Anghel, H. Nies, "Complex-Valued End-to-end
 
 import torch
 import torch.nn as nn
-from Src.Net_Parts_Torch import Complex_DoubleConv, Complex_Down_DoubleConv2d, Complex_Up, Complex_OutConv
-from Src.Net_Parts_Torch import Complex_Linear, Complex_Flatten
-from Src.ComplexValuedAutoencoder_Class_Torch import ComplexReLU, ComplexConv2d, Complexavg_pool2d
+from Src.CV_Net_Modules import Complex_DoubleConv, Complex_Down_DoubleConv2d, Complex_Up, Complex_OutConv
+from Src.CV_Net_Modules import Complex_Linear, Complex_Flatten
+from Src.CV_Functions import ComplexReLU, ComplexConv2d, Complexavg_pool2d
 
 
 class end_to_end_Net(nn.Module):

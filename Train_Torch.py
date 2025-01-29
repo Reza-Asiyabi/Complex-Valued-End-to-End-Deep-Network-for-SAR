@@ -8,24 +8,19 @@ import argparse
 import logging
 import os
 import sys
-import imageio
-import glob
-
 import numpy as np
 import torch
 import torch.nn as nn
 from torch import optim
 from tqdm import tqdm
 from sklearn.metrics import accuracy_score
-
 import torchvision
 import torchvision.transforms as transforms
-
 # from torch.utils.tensorboard import SummaryWriter
 from torch.utils.data import DataLoader, random_split
 
-from ComplexValuedAutoencoderMain_Torch import end_to_end_Net
-from Src.ComplexValuedAutoencoder_Class_Torch import Complex2foldloss, Complex2foldloss_Coh
+from CV_Models import end_to_end_Net
+from Src.CV_Functions import Complex2foldloss, Complex2foldloss_Coh
 from Src.Dataset_Preperation_Torch import BasicDataset
 
 torch.autograd.set_detect_anomaly(True)

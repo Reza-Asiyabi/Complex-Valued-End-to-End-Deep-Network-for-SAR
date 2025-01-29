@@ -3,6 +3,8 @@ Based on "R. M.Asiyabi, M. Datcu, A. Anghel, H. Nies, "Complex-Valued End-to-end
  Network with Coherency Preservation for Complex-Valued SAR Data Reconstruction and
   Classification" IEEE Transactions on Geoscience and Remote Sensing (2023)"
 """
+import os
+os.environ['KMP_DUPLICATE_LIB_OK']='True'
 
 import numpy as np
 import torch
@@ -11,14 +13,8 @@ import torch
 from matplotlib import pyplot as plt
 from sklearn.metrics import accuracy_score, confusion_matrix
 
-from ComplexValuedAutoencoderMain_Torch import end_to_end_Net
+from CV_Models import end_to_end_Net
 from Src import Coherence
-
-# import torchvision
-# import torchvision.transforms as transforms
-
-import os
-os.environ['KMP_DUPLICATE_LIB_OK']='True'
 
 ###################################################################################################################
 PATH = 'path to save the trained model.pth'
