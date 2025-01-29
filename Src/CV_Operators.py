@@ -59,13 +59,6 @@ def complex_sigmoid(input):
 
     return sigmoid(input.real)+1j*sigmoid(input.imag)
 
-# def _retrieve_elements_from_indices(tensor, indices):
-#     flattened_tensor = tensor.flatten(start_dim=-2)
-#     print("shape flatten_tensor:", flattened_tensor.shape)
-#     print("shape indices:", indices.shape)
-#     output = flattened_tensor.gather(dim=-1, index=indices.flatten(start_dim=-2)).view_as(indices)
-#     return output
-#
 # def complex_max_pool2d(input, kernel_size, stride=None, padding=0,
 #                        dilation=1, ceil_mode=False, return_indices=True):
 #     '''
