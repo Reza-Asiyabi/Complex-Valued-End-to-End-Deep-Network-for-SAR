@@ -7,7 +7,7 @@ Based on "R. M.Asiyabi, M. Datcu, A. Anghel, H. Nies, "Complex-Valued End-to-end
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from Src.ComplexValuedAutoencoder_Class_Torch import ComplexBatchNorm1d, ComplexBatchNorm2d, ComplexConv1d, ComplexConv2d, ComplexLinear, ComplexConvTranspose1d, ComplexConvTranspose2d, ComplexReLU, ComplexLeakyReLU, ComplexSigmoid, Complexavg_pool1d, Complexavg_pool2d, ComplexUpsample
+from CV_Functions import ComplexBatchNorm1d, ComplexBatchNorm2d, ComplexConv1d, ComplexConv2d, ComplexLinear, ComplexConvTranspose1d, ComplexConvTranspose2d, ComplexReLU, ComplexLeakyReLU, ComplexSigmoid, Complexavg_pool1d, Complexavg_pool2d, ComplexUpsample
 
 class Complex_DoubleConv(nn.Module):
     """(convolution => [BN] => ReLU) * 2"""
