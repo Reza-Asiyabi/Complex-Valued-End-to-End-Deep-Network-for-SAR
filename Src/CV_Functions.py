@@ -9,8 +9,9 @@ from torch.nn import Module, Parameter, init
 from torch.nn import Conv1d, Conv2d, Linear
 from torch.nn import ConvTranspose1d, ConvTranspose2d
 import torch.nn.functional as F
-from CV_Operators import complex_relu, complex_leaky_relu, complex_sigmoid, complex_MSE_loss, complex_CrossEntropy_loss, complex_avg_pool1d, complex_avg_pool2d, complex_Upsample
-import Coherence
+
+from Src.CV_Operators import complex_relu, complex_leaky_relu, complex_sigmoid, complex_MSE_loss, complex_CrossEntropy_loss, complex_avg_pool1d, complex_avg_pool2d, complex_Upsample
+import Src.Coherence
 
 def apply_complex(fr, fi, input):
 
@@ -128,7 +129,7 @@ class ComplexConv1d(Module):
     Applies a 1D complex convolution over an input signal composed of several input planes
     '''
 
-    def __init__(self,in_channels, out_channels, kernel_size=3, stride=1, padding = 0,
+    def __init__(self,in_channels, out_channels, kernel_size=3, stride=1, padding=0,
                  dilation=1, groups=1, bias=True):
         super(ComplexConv1d, self).__init__()
         self.conv_r = Conv1d(in_channels, out_channels, kernel_size, stride, padding, dilation, groups, bias)
@@ -142,7 +143,7 @@ class ComplexConv2d(Module):
     Applies a 2D complex convolution over an input signal composed of several input planes
     '''
 
-    def __init__(self,in_channels, out_channels, kernel_size=3, stride=1, padding = 0,
+    def __init__(self,in_channels, out_channels, kernel_size=3, stride=1, padding=0,
                  dilation=1, groups=1, bias=True):
         super(ComplexConv2d, self).__init__()
         self.conv_r = Conv2d(in_channels, out_channels, kernel_size, stride, padding, dilation, groups, bias)
