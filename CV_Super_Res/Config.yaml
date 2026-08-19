@@ -1,0 +1,42 @@
+description: "SAR-Super-Res-Model"
+
+# Data configuration
+data:
+  train_data_path: 'Reza/Zimbabwe/LonLat_ALOS_S2_GEDI/Patches_15x15/Train_Patches.npy'
+  eval_data_path: 'Reza/Zimbabwe/LonLat_ALOS_S2_GEDI/Patches_15x15/Eval_Patches.npy'
+  data_channels: [0, 1]
+  range_downsample_factor: 1
+  azimuth_downsample_factor: 4
+  dataset_normalization: 'Mean_std' # options: 'Mean_std' or 'Min_Max' or null
+  data_stats_dir: "Reza/Zimbabwe/LonLat_ALOS_S2_GEDI/LonLat_ALOS_S2_GEDI_img_statistics.csv"
+  clipping_threshold: [-150, 150]
+
+# Model configuration
+model:
+  name: "CV_SAR_SuperRes_Net"  # Options: 'CV_SAR_SuperRes_Net'
+  in_channels: 2
+  out_channels: 2
+  pretrained: False
+  checkpoint_path: "Python_Projects/Biomass_Model/Logs/2025-02-13_13-25-43_Height-Model_jobID-1227336/Models/Model_best_evalLoss.pth.tar"  # Set if pretrained is true
+  finetuning_strategy: null # include 'En' for the entry_block, 'Fe' for thea feature_block, 'Pr' for the prediction_block and 'Vr' for the variances_block - null for none
+
+# Training configuration
+training:
+  root: 'Local' #'Local' for training on the laptop and 'Server' for training on the HPC cluster
+  save_dir: "Python_Projects/Biomass_Model/Logs/" # path to save the trained model and logs
+  total_epochs: 20
+  train_batch_size: 128 #32
+  eval_batch_size: 32 #1
+  num_workers: 4
+  optimizer: 'Adam' #options are 'Adam', and 'SGD'
+  momentum: 0.9 # For SGD optim
+  weight_decay: 0.01 # For SGD and Adam optim
+  betas: [0.9, 0.999] # For Adam optim
+  learning_rate: 0.000001 # For SGD and Adam optim
+  use_lr_scheduler: True
+  lr_scheduler_step: 1
+  lr_scheduler_gamma: 0.5
+  clip_max_norm: 1
+  eval_freq: 200
+  save_freq: 1
+  loss_function: 'ComplexMSEloss' #Options are: 'ComplexMSEloss', 'ComplexCrossEntropyloss',
